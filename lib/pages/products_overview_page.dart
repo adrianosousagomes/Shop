@@ -3,15 +3,20 @@ import 'package:provider/provider.dart';
 import '../components/product_grid.dart';
 import '../models/product_list.dart';
 
-enum FilterOptions { FAVORITO, ALL }
+enum FilterOptions { Favorite, All }
 
-class ProductsOverviewPage extends StatelessWidget {
+class ProductsOverviewPage extends StatefulWidget {
   const ProductsOverviewPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    final provider = Provider.of<ProductList>(context);
+  State<ProductsOverviewPage> createState() => _ProductsOverviewPageState();
+}
 
+class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
+  bool _showFavoriteOnly = false;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Minha Loja'),
@@ -21,24 +26,29 @@ class ProductsOverviewPage extends StatelessWidget {
             itemBuilder: (_) => [
               const PopupMenuItem(
                 child: Text('Somente Favoritos'),
-                value: FilterOptions.FAVORITO,
+                value: FilterOptions.Favorite,
               ),
               const PopupMenuItem(
                 child: Text('Todos'),
-                value: FilterOptions.ALL,
+                value: FilterOptions.All,
               )
             ],
             onSelected: (FilterOptions selectedValue) {
-              if (selectedValue == FilterOptions.FAVORITO) {
-                provider.showFavoriteOnly();
-              } else {
-                provider.showFavoriteAll();
-              }
+              setState(() {
+                if (selectedValue == FilterOptions.Favorite) {
+                  _showFavoriteOnly = true;
+                } else {
+                  _showFavoriteOnly = false;
+                }
+                print(_showFavoriteOnly);
+              });
             },
           )
         ],
       ),
-      body: const ProductGrid(),
+      body: ProductGrid(
+        showFavoriteOnly: _showFavoriteOnly,
+      ),
     );
   }
 }
