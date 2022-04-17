@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop/models/product_list.dart';
 import 'package:shop/utils/app_routes.dart';
 
 import '../models/product.dart';
@@ -33,9 +35,14 @@ class ProductItem extends StatelessWidget {
               },
             ),
             IconButton(
-              onPressed: () {},
               icon: const Icon(Icons.delete),
               color: Theme.of(context).errorColor,
+              onPressed: () {
+                Provider.of<ProductList>(
+                  context,
+                  listen: false,
+                ).removeProduct(product.id);
+              },
             ),
           ],
         ),
