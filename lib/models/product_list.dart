@@ -56,6 +56,9 @@ class ProductList with ChangeNotifier {
         imageUrl: product.imageUrl,
       ));
       notifyListeners();
+    }).catchError((error) {
+      print(error.toString());
+      throw error;
     });
   }
 
