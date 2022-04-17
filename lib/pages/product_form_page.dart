@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:shop/models/product.dart';
+import 'package:provider/provider.dart';
+import 'package:shop/models/product_list.dart';
 
 class ProductFormPage extends StatefulWidget {
   const ProductFormPage({Key? key}) : super(key: key);
@@ -56,28 +55,20 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
     _formKey.currentState?.save();
 
-    final newProduct = Product(
-      id: Random().nextDouble().toString(),
-      name: _formData['name'] as String,
-      description: _formData['description'] as String,
-      price: _formData['price'] as double,
-      imageUrl: _formData['imageUrl'] as String,
-    );
-
-    print(newProduct.id);
-    print(newProduct.name);
-    print(newProduct.price);
+    Provider.of<ProductList>(context, listen: false)
+        .addProductFromData(_formData);
+    Navigator.of(context).pop();
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Formulário de Produto'),
+        title: const Text('Formulário de Produto'),
         actions: [
           IconButton(
             onPressed: _submitForm,
-            icon: Icon(Icons.save),
+            icon: const Icon(Icons.save),
           ),
         ],
       ),
@@ -122,7 +113,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                       _formData['price'] = double.parse(price ?? '0'),
                   validator: (_price) {
                     final priceString = _price ?? '';
-                    final price = double.parse(priceString) ?? -1;
+                    final price = double.parse(priceString);
 
                     if (price <= 0) {
                       return 'Informe um preço válido.';
