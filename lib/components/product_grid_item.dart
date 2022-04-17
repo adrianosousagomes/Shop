@@ -5,8 +5,8 @@ import 'package:shop/utils/app_routes.dart';
 import '../models/cart.dart';
 import '../models/product.dart';
 
-class ProductItem extends StatelessWidget {
-  const ProductItem({
+class ProductGridItem extends StatelessWidget {
+  const ProductGridItem({
     Key? key,
   }) : super(key: key);
 
@@ -47,11 +47,9 @@ class ProductItem extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           trailing: IconButton(
-            onPressed: () {
-              cart.addItem(product);
-            },
             icon: const Icon(Icons.shopping_cart),
             color: Theme.of(context).accentColor,
+            onPressed: () {},
           ),
         ),
       ),
