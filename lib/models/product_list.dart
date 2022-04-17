@@ -33,19 +33,32 @@ class ProductList with ChangeNotifier {
   }
 
   void addProduct(Product product) {
-    http.post(Uri.parse('$_baseUrl/products.json'),
-        body: jsonEncode(
-          {
-            "name": product.name,
-            "description": product.description,
-            "price": product.price,
-            "imageUrl": product.imageUrl,
-            "isFavorite": product.isFavorite,
-          },
-        ));
+    final future = http.post(
+      Uri.parse('$_baseUrl/products.json'),
+      body: jsonEncode(
+        {
+          "name": product.name,
+          "description": product.description,
+          "price": product.price,
+          "imageUrl": product.imageUrl,
+          "isFavorite": product.isFavorite,
+        },
+      ),
+    );
 
-    _items.add(product);
-    notifyListeners();
+    future.then((response) {
+      print(jsonDecode(response.body));
+
+      final id = jsonDecode(response.body)['name'];
+      _items.add(Product(
+        id: id,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        imageUrl: product.imageUrl,
+      ));
+      notifyListeners();
+    });
   }
 
   void updateProduct(Product product) {
