@@ -15,8 +15,8 @@ class ProductList with ChangeNotifier {
   List<Product> get favoriteItems => _items.where((p) => p.isFavorite).toList();
 
   Future<void> loadProducts() async {
+    _items.clear();
     final response = await http.get(Uri.parse(_url));
-
     if (response.body == 'null') return;
 
     Map<String, dynamic> data = jsonDecode(response.body);
