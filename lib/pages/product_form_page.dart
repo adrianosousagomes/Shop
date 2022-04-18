@@ -70,7 +70,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
     return isValidUrl && endsWithFile;
   }
 
-  void _submitForm() {
+  void _submitForm() async {
     final isValid = _formKey.currentState?.validate() ?? false;
 
     if (!isValid) {
@@ -79,20 +79,22 @@ class _ProductFormPageState extends State<ProductFormPage> {
 
     _formKey.currentState?.save();
 
-    setState(() {
-      _isLoading = true;
-    });
+    setState(() => _isLoading = true);
 
-    Provider.of<ProductList>(
-      context,
-      listen: false,
-    ).saveProduct(_formData).catchError((error) {
-      return showDialog<void>(
+    try {
+      await Provider.of<ProductList>(
+        context,
+        listen: false,
+      ).saveProduct(_formData);
+
+      Navigator.of(context).pop();
+    } catch (error) {
+      await showDialog<void>(
         context: context,
         builder: (ctx) => AlertDialog(
-          title: Text('Ocorreu um erro!'),
-          content: Text(
-              'Ocorreu um erro para salvar o produto.'), // for show log debug -> error.toString()
+          title: const Text('Ocorreu um erro!'),
+          content: const Text('Ocorreu um erro para salvar o produto.'),
+          // for show log debug -> error.toString()
           actions: [
             TextButton(
               onPressed: () => Navigator.of(context).pop(),
@@ -101,10 +103,9 @@ class _ProductFormPageState extends State<ProductFormPage> {
           ],
         ),
       );
-    }).then((value) {
-      setState(() => _isLoading = true);
-      Navigator.of(context).pop();
-    });
+    } finally {
+      setState(() => _isLoading = false);
+    }
   }
 
   @override
