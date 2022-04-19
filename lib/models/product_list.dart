@@ -99,12 +99,22 @@ class ProductList with ChangeNotifier {
     }
   }
 
-  void removeProduct(String productId) {
-    int index = _items.indexWhere((p) => p.id == productId);
+  Future<void> removeProduct(Product product) async {
+    int index = _items.indexWhere((p) => p.id == product.id);
 
     if (index >= 0) {
-      _items.removeWhere((p) => p.id == productId);
+      final product = _items[index];
+      _items.remove(product);
       notifyListeners();
+
+      final response = await http.delete(
+        Uri.parse('$_baseUrl/${product.id}'),
+      );
+
+      if (response.statusCode >= 400) {
+        _items.insert(index, product);
+        notifyListeners();
+      }
     }
   }
 

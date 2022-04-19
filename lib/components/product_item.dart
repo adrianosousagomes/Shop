@@ -63,7 +63,7 @@ class ProductItem extends StatelessWidget {
                     Provider.of<ProductList>(
                       context,
                       listen: false,
-                    ).removeProduct(product.id);
+                    ).removeProduct(product);
                   }
                 });
 
