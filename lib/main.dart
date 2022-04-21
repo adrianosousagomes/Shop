@@ -42,7 +42,11 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProxyProvider<Auth, OrderList>(
           create: (_) => OrderList(),
           update: (ctx, auth, previus) {
-            return OrderList(auth.token ?? '', previus?.items ?? []);
+            return OrderList(
+              auth.token ?? '',
+              auth.userId ?? '',
+              previus?.items ?? [],
+            );
           },
         ),
         ChangeNotifierProvider(
