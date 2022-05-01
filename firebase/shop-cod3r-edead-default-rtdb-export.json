@@ -1,0 +1,148 @@
+{
+  "orders": {
+    "ruCqsmk8ZuOFdJgXPzdraUKMsVs1": {
+      "-N08cDG593q1iU3GQs4L": {
+        "date": "2022-04-20T21:58:41.854830",
+        "products": [
+          {
+            "id": "0.650528833348023",
+            "name": "Keyed English Guitar 2022",
+            "price": 5071.9,
+            "productId": "-N-ug6ha8tLPTMtqiu1q",
+            "quantity": 1
+          },
+          {
+            "id": "0.884265271344759",
+            "name": "E-Book Technical Slash Guitar",
+            "price": 97.8,
+            "productId": "-N-uhGtoJYqFi_NrPsjf",
+            "quantity": 1
+          },
+          {
+            "id": "0.45195768333642183",
+            "name": "Poster - Slash Les Paul Guitar & Top Hat",
+            "price": 29.99,
+            "productId": "-N-ui9jBBcQ_5uejJA3R",
+            "quantity": 1
+          }
+        ],
+        "total": 5199.69
+      },
+      "-N08cNaGK0zLZofsywSk": {
+        "date": "2022-04-20T21:59:24.082098",
+        "products": [
+          {
+            "id": "0.5893582709865488",
+            "name": "Gibson LesPaul - Slash Limited Edition",
+            "price": 9999.9,
+            "productId": "-N-ug_wsMpgX8nfhPceo",
+            "quantity": 1
+          },
+          {
+            "id": "0.03489091309424819",
+            "name": "PS3 Game Guitar Hero III Legends of Rock",
+            "price": 69.97,
+            "productId": "-N-uhgAcmeJpgxhDxvc-",
+            "quantity": 1
+          }
+        ],
+        "total": 10069.869999999999
+      },
+      "-N08xkCQr7y-n-9WNt9f": {
+        "date": "2022-04-20T23:32:45.891783",
+        "products": [
+          {
+            "id": "0.01851064797033941",
+            "name": "Keyed English Guitar 2022",
+            "price": 5071.9,
+            "productId": "-N-ug6ha8tLPTMtqiu1q",
+            "quantity": 1
+          },
+          {
+            "id": "0.6046566877979475",
+            "name": "Gibson LesPaul - Slash Limited Edition",
+            "price": 9999.9,
+            "productId": "-N-ug_wsMpgX8nfhPceo",
+            "quantity": 1
+          },
+          {
+            "id": "0.9995444061875297",
+            "name": "PS3 Game Guitar Hero III Legends of Rock",
+            "price": 69.97,
+            "productId": "-N-uhgAcmeJpgxhDxvc-",
+            "quantity": 1
+          }
+        ],
+        "total": 15141.769999999999
+      }
+    },
+    "sdWpQboWk7aUdpkiyRJjUJEYoaq2": {
+      "-N08cZKIigEJ6edd86fg": {
+        "date": "2022-04-20T22:00:12.180651",
+        "products": [
+          {
+            "id": "0.9760196614764737",
+            "name": "Vintage \"Contraband\" and Velvet Revolver 2",
+            "price": 999.98,
+            "productId": "-N-uiQYxbELUid1L0A8y",
+            "quantity": 1
+          }
+        ],
+        "total": 999.98
+      }
+    }
+  },
+  "products": {
+    "-N-ug6ha8tLPTMtqiu1q": {
+      "description": "The best English Guitar Old",
+      "imageUrl": "https://mimo-international.com/mimo/image.ashx?q=http://www.mimo-international.com/media/MINIM/RNCM/IMAGE/afed7c6a6cbc6d56177e7aefd509edf0.jpg",
+      "name": "Keyed English Guitar 2022",
+      "price": 5071.9
+    },
+    "-N-ug_wsMpgX8nfhPceo": {
+      "description": "Slash Guitar Limited Edition",
+      "imageUrl": "https://guitar-compare.com/wp-content/uploads/2017/07/Epiphone-Les-Paul-Slash-Appetite-Les-Paul-Standard-Appetite-Amber-2010_02.jpg",
+      "name": "Gibson LesPaul - Slash Limited Edition",
+      "price": 9999.9
+    },
+    "-N-uhGtoJYqFi_NrPsjf": {
+      "description": "Complete EBook writed by Slash history on Guns N Roses Shows.",
+      "imageUrl": "https://images-na.ssl-images-amazon.com/images/I/51xMHsdO4BL._SX373_BO1,204,203,200_.jpg",
+      "name": "E-Book Technical Slash Guitar",
+      "price": 97.8
+    },
+    "-N-uhgAcmeJpgxhDxvc-": {
+      "description": "PS3 / XBOX\nPS3 Game Guitar Hero III Legends of Rock",
+      "imageUrl": "https://www.gamespot.com/a/uploads/scale_medium/mig/9/9/2/4/2279924-slash_14300_screen.jpg",
+      "name": "PS3 Game Guitar Hero III Legends of Rock",
+      "price": 69.97
+    },
+    "-N-ui9jBBcQ_5uejJA3R": {
+      "description": "High definition 3D Models of Slash Les Paul guitar and top hat\n\nGibson Les Paul Guitar. Polygons 45186 Vertices 48016\n\nEpiphone Les Paul Guitar Polygons 45405 Vertices 48269\n\nTop Hat 1 Polygons 27984 Vertices 58848\n\nTop Hat 2 Polygons 14944 Vertices 15090\n\nFile formats 3DS DWG FBX WRL Max 2010 Vray Max 9 OBJ",
+      "imageUrl": "https://s3.envato.com/files/16138100/SlashGuitar_0000.jpg",
+      "name": "Poster - Slash Les Paul Guitar & Top Hat",
+      "price": 29.99
+    },
+    "-N-uiQYxbELUid1L0A8y": {
+      "description": "That player was Slash – lead guitarist with a band called Guns N’ Roses. Armed with a simple setup that included a Les Paul Standard and 100-watt Marshall, he made his mark by showing players that all you need to achieve greatness are a true sense of melody, good tone, driving ambition, and an attitude that separates you from the masses.",
+      "imageUrl": "https://www.vintageguitar.com/wp-content/uploads/3041/06-slash.jpg",
+      "name": "Vintage \"Contraband\" and Velvet Revolver 2",
+      "price": 999.98
+    }
+  },
+  "userFavorites": {
+    "ruCqsmk8ZuOFdJgXPzdraUKMsVs1": {
+      "-N-ug6ha8tLPTMtqiu1q": true,
+      "-N-ug_wsMpgX8nfhPceo": false,
+      "-N-uhGtoJYqFi_NrPsjf": true,
+      "-N-uhgAcmeJpgxhDxvc-": false,
+      "-N-ui9jBBcQ_5uejJA3R": true,
+      "-N-uiQYxbELUid1L0A8y": false
+    },
+    "sdWpQboWk7aUdpkiyRJjUJEYoaq2": {
+      "-N-uhGtoJYqFi_NrPsjf": true,
+      "-N-uhgAcmeJpgxhDxvc-": true,
+      "-N-uiQYxbELUid1L0A8y": false
+    }
+  }
+}
